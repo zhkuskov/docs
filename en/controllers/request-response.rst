@@ -295,9 +295,9 @@ There are several built-in detectors that you can use:
 Session Data
 ------------
 
-To access the session for a given request use the ``session()`` method::
+To access the session for a given request use the ``getSession()`` method::
 
-    $userName = $this->request->session()->read('Auth.User.name');
+    $userName = $this->request->getSession()->read('Auth.User.name');
 
 For more information, see the :doc:`/development/sessions` documentation for how
 to use the session object.

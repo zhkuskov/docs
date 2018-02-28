@@ -141,6 +141,22 @@ branch, as you cannot edit it once the pull request is created.
 All bug fixes merged into a maintenance branch will also be merged into upcoming
 releases periodically by the core team.
 
+Pull request preflight checklist
+================================
+
+Static checks
+-------------
+
+- [ ] PHPCS (https://github.com/cakephp/cakephp-codesniffer) passing, use `composer cs-check`
+- [ ] PHPSTAN (https://github.com/phpstan/phpstan) passing, use `composer require --dev phpstan/phpstan:^0.9 && vendor/bin/phpstan analyse -c phpstan.neon -l 2 src`
+
+Unit tests
+----------
+
+- [ ] All unit tests passing, use `vendor/bin/phpunit`
+- [ ] Ensure changes done are properly covered by unit tests
+- [ ] Prefer methods over annotations when asserting exceptions, example use `expectException()` instead of `@expectedException`
+
 .. meta::
     :title lang=en: Code
     :keywords lang=en: cakephp source code,code patches,test ref,descriptive name,bob barker,initial setup,global user,database connection,clone,repository,user information,enhancement,back patches,checkout
